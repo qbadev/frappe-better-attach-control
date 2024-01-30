@@ -101,7 +101,8 @@ frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.Contro
         this.has_input = true;
     }
     _setup_display() {
-                if (!this._allow_multiple) {
+        let me = this;
+        if (!this._allow_multiple) {
              if (this._images_only) this._on_setup_display();
         } else {
             this.$value.find('.attached-file-link')
