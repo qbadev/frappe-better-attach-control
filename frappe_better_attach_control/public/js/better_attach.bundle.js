@@ -101,7 +101,7 @@ frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.Contro
         this.has_input = true;
     }
     _setup_display() {
-        if (!this._allow_multiple) {
+                if (!this._allow_multiple) {
              if (this._images_only) this._on_setup_display();
         } else {
             this.$value.find('.attached-file-link')
@@ -259,7 +259,7 @@ frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.Contro
                 this._values.push([filename || value, dataurl || value]);
                 let file_name = this._values[0];
                 if (this._values.length > 1) {
-                    file_name += ' ' + _('and {0} more', {0: this._values.length - 1});
+                    file_name += ' ' + __('and {0} more', {0: this._values.length - 1});
                 }
                 $link.html(file_name);
             } else {
