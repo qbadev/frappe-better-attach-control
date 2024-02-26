@@ -283,7 +283,7 @@ frappe.ui.form.ControlAttach = frappe.ui.form.ControlAttach.extend({
         } else {
             var me = this;
             request(
-                'get_options',
+                'field.get_options',
                 {
                     doctype: this._doctype,
                     name: this.df.fieldname
@@ -646,7 +646,7 @@ frappe.ui.form.ControlAttach = frappe.ui.form.ControlAttach.extend({
     },
     _remove_files: function(data, callback, error) {
         if (!isArray(data)) data = [data];
-        request('remove_files', {files: data}, callback, error);
+        request('attachment.remove_files', {files: data}, callback, error);
     },
     _remove_file_by_idx: function(idx) {
         var len = this._value.length;

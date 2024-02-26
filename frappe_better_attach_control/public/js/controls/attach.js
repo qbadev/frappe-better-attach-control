@@ -303,7 +303,7 @@ frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.Contro
         } else {
             var me = this;
             request(
-                'get_options',
+                'field.get_options',
                 {
                     doctype: this._doctype,
                     name: this.df.fieldname
@@ -669,7 +669,7 @@ frappe.ui.form.ControlAttach = class ControlAttach extends frappe.ui.form.Contro
     }
     _remove_files(data, callback, error) {
         if (!isArray(data)) data = [data];
-        request('remove_files', {files: data}, callback, error);
+        request('attachment.remove_files', {files: data}, callback, error);
     }
     _remove_file_by_idx(idx) {
         let len = this._value.length;

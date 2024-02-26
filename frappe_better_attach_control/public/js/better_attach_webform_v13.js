@@ -1963,7 +1963,7 @@
       } else {
         var me = this;
         request(
-          "get_options",
+          "field.get_options",
           {
             doctype: this._doctype,
             name: this.df.fieldname
@@ -2326,7 +2326,7 @@
     _remove_files: function(data, callback, error2) {
       if (!isArray(data))
         data = [data];
-      request("remove_files", { files: data }, callback, error2);
+      request("attachment.remove_files", { files: data }, callback, error2);
     },
     _remove_file_by_idx: function(idx) {
       var len = this._value.length;
